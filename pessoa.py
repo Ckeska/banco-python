@@ -20,6 +20,16 @@ class Gerente(Pessoa):
 
     def __str__(self):
         return f"Nome: {self.nome}, CPF: {self.cpf}, Data de Nascimento: {self.data_nasci}, Senha: {self.senha}"
+    
+    def cria_cliente(self):
+        # Chamada de uma função para a crição de cliente
+        Cliente.new_cliente()
+        pass
 
 class Cliente(Pessoa):
-    pass
+    
+    
+    # Definição do construtor da classe Cliente
+    @classmethod
+    def new_cliente():
+        pass
