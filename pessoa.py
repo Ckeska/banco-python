@@ -2,7 +2,6 @@
 from abc import ABC, abstractmethod
 import datetime as dt
 #Vamos lá, temos que fazer esse código com uma forma mais limpa, colocar as funcões nos códigos auxiliares e só chamar depois.
-listanomes = [] #nao sei se precisa estar aqui fora
 
 # Definição da classe abstrata Pessoa
 class Pessoa:
