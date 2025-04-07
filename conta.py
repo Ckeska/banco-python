@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
-class Conta:
+#Implentação de uma classe abstrata
+class Conta(ABC):
     def __init__(self,conta,saldo):
         self.conta = conta
         self.saldo = saldo
@@ -9,8 +10,9 @@ class Conta:
     def saque(self,valor):
         pass
     
+    @abstractmethod
     def deposito(self, valor):
-        self.saldo += valor
+        pass
     
         
 class ContaCorrente(Conta):
@@ -22,6 +24,8 @@ class ContaCorrente(Conta):
             print('Não há como sacar esse valor.')
         else:
             self.saldo -= valor
+    def deposito(self, valor):
+        return print('Não é possível fazer essa operação nessa conta.')
         
 
 class ContaPoupanca(Conta):
@@ -32,6 +36,9 @@ class ContaPoupanca(Conta):
             print('Não há como sacar esse valor.')
         else:
             self.saldo -= valor
+    def deposito(self, valor):
+        return super().deposito(valor)     
+    
     
 class GerenciadeConta:
     
