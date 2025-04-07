@@ -24,6 +24,9 @@ class Gerente(Pessoa):
         # Chamada de uma função para a crição de cliente
         Cliente.novo_cliente()
         pass
+    def edita_cliente(self):
+        Cliente.arruma_cliente()
+        pass
 
 class Cliente(Pessoa):
     def __init__(self, nome, cpf, data_nasci, senha):
@@ -39,4 +42,9 @@ class Cliente(Pessoa):
         data_nasci = input('Digite a data de nascimento do Cliente:')
         senha = input('Digite a senha do Cliente:')
         return Cliente(nome,cpf,data_nasci,senha)
-        
+    
+    @classmethod
+    def arruma_cliente():
+        nome = input('Digite o nome do Cliente:')
+        cpf = int(input('Digite o cpf do Cliente:'))
+        return Cliente(nome,cpf)

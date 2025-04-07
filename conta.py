@@ -19,11 +19,13 @@ class ContaCorrente(Conta):
     def __init__(self, conta, saldo,limite=500):
         super().__init__(conta, saldo)
         self.limite = limite
+    
     def saque(self,valor):
         if valor > (self.saldo + self.limite):
             print('Não há como sacar esse valor.')
         else:
             self.saldo -= valor
+    
     def deposito(self, valor):
         return print('Não é possível fazer essa operação nessa conta.')
         
@@ -31,15 +33,15 @@ class ContaCorrente(Conta):
 class ContaPoupanca(Conta):
     def __init__(self, conta, saldo):
             super().__init__(conta, saldo)
+    
     def saque(self,valor):
         if valor > self.saldo:
             print('Não há como sacar esse valor.')
         else:
             self.saldo -= valor
+    
     def deposito(self, valor):
-        return super().deposito(valor)     
-    
-    
-class GerenciadeConta:
-    
-    pass
+        if valor <= 0:
+            print('Não é possivel realizar o depósito com esse valor.')
+        else:
+            self.saldo += valor 
