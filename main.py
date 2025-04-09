@@ -2,6 +2,7 @@
 from conta import Conta, ContaCorrente, ContaPoupanca
 from pessoa import Pessoa, Cliente, Gerente
 
+# os primeiros prints desse loop não precisam da formatação. pode tirar os "f" antes de cada print.
 while True:
     print(f'='*100)
     print('Bem vindo ao Banco em Python!')
@@ -18,7 +19,8 @@ while True:
         opconta = int(input(f'1)Conta Corrente \t 2)Conta Poupança \t 3)Sair'))
         
         if opconta== 1:
-            Cliente.verificar_senha_segura()
+ # dentro dessa estrutura e das outras que vc usou esse método de conferir senha, vc errou na lógica. chamou uma vez a função sem armazenar o valor dela e dps chamou a função novamente para validar seu if.         
+ Cliente.verificar_senha_segura()
             if Cliente.verificar_senha_segura() == True:
                 print('O que deseja fazer hoje?')
                 opcc = int(input(f'1)Ver saldo \t 2)Fazer Depósito \t 3) Fazer Saque'))
