@@ -6,6 +6,8 @@ import getpass
 #Vamos lá, temos que fazer esse código com uma forma mais limpa, colocar as funcões nos códigos auxiliares e só chamar depois.
 
 # Definição da classe abstrata Pessoa
+"""Esse arquivo aqui ficou do caralho! tenta colocar o mesmo esforco que vc
+colocou nesse, nos outros."""
 class Pessoa:
     @abstractmethod
     def __init__(self,nome,cpf):

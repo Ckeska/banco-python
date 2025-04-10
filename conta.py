@@ -19,6 +19,7 @@ class Conta(ABC):
         
 class ContaCorrente(Conta):
     def __init__(self,conta, saldo,limite=500):
+# Aqui falta um argumento (acho que é agencia)
         super().__init__(agencia,conta, saldo)
         self.limite = limite
     
@@ -35,6 +36,7 @@ class ContaCorrente(Conta):
 
 class ContaPoupanca(Conta):
     def __init__(self, conta, saldo):
+# squi também falta a agência
             super().__init__(agencia,conta, saldo)
     
     def saque(self,valor):
